@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            background-color: black;
+        } */
+        #box1{
+            height: 50px;
+            width: 90px;
+            background-color: yellowgreen;
+            font-weight: bolder;
+
+        }
+        input{
+            width: 300px;
+            margin-right:1%;
+        }
+        .div1{
+            display: flex;
+            justify-content: center;
+        }
+        
+        #list{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         margin: 1%;
+        }
+   
+        #nolist{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <input type="text" id="in">
+    <button id="box1" onclick="fun1()">Add Item</button>
+</div>
+<div id="list"></div>
+<p id="nolist"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var a=document.getElementById("in")
+    var b=document.getElementById("list")
+    var z=document.getElementById("nolist")
+
+    // var c=document.addEventListener("click",fun2)
+    function fun1(){
+        // a.style.display="block"
+
+        var ele=document.createElement("div")
+        // var p=document.createElement("p")
+        var but=document.createElement("button")
+        var ch=document.createTextNode("x")
+        but.setAttribute("onclick","fun6(this)")
+        console.log(but)
+        var text=document.createTextNode(a.value)
+        but.appendChild(ch)
+        ele.appendChild(text)
+        ele.appendChild(but)
+        ele.style.height="80px"
+        ele.style.width="500px"
+        // ele.style.border="2px solid black"
+        ele.style.marginBottom="10px"
+        ele.style.display="flex"
+        ele.style.justifyContent="center"
+        ele.style.justifyContent="space-around"
+        ele.style.alignItems="center"
+        a.value=" "
+        console.log(ele)
+        document.getElementById("list").appendChild(ele)
+    }
+
+function fun6(n){
+    n.parentNode.remove();
+}
+</script>
+</body>
+</html>
